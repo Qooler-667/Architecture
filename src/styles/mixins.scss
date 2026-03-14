@@ -1,0 +1,183 @@
+@use 'vars' as *;
+// fonts
+@mixin font-face($name, $path, $weight: 400) {
+  @font-face {
+    font-family: $name;
+    src: url('../../fonts/#{$path}.woff2') format('woff2');
+    font-weight: $weight;
+    font-display: swap;
+  }
+}
+// ---------------------------------------
+
+@mixin h-style(
+  $color: $base-black,
+  $size: $size-h1,
+  $font: $f-main,
+  $f-weight: $w-bold,
+  $l-height: $l-height115,
+  $l-spacing: $l-spacing02,
+  $t-transform: capitalize
+) {
+  color: $color;
+  font-size: $size;
+  font-family: $font;
+  font-weight: $f-weight;
+  line-height: $l-height;
+  letter-spacing: $l-spacing;
+  text-transform: $t-transform;
+  @media (max-width: 768px) {
+    line-height: $l-height131;
+  }
+  @content;
+}
+// ---------------------------------------
+
+@mixin h1-style {
+  @include h-style;
+}
+
+// ---------------------------------------
+
+@mixin h2-style {
+  @include h-style($font: $f-main, $size: $size-h2, $l-height: $l-height135) {
+    @media (max-width: 768px) {
+      line-height: $l-height142;
+    }
+  }
+}
+
+@mixin subtitle(
+  $color: $base-black,
+  $font: $f-main,
+  $weight: $w-semiBold,
+  $size: $size-text,
+  $l-spacing: $l-spacing02,
+  $t-transform: capitalize,
+
+  $pseudo: before
+) {
+  @include flex($align: center, $gap: 20px);
+  color: $color;
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  letter-spacing: $l-spacing;
+  text-transform: $t-transform;
+
+  &:#{$pseudo} {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: $base-black;
+  }
+}
+// ---------------------------------------
+
+@mixin text-style(
+  $color: $text-color,
+  $font: $f-second,
+  $weight: $w-semiBold,
+  $size: $size-text,
+  $l-height: $l-height133
+) {
+  color: $color;
+  font-family: $font;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $l-height;
+  @media (max-width: 768px) {
+    line-height: $l-height129;
+  }
+}
+// ---------------------------------------
+
+@mixin btn-font(
+  $color: $base-black,
+  $size: $size-text,
+  $font: $f-second,
+  $weight: $w-bold,
+  $l-spacing: $l-spacing02
+) {
+  color: $color;
+  font-size: $size;
+  font-family: $font;
+  font-weight: $weight;
+  letter-spacing: $l-spacing;
+}
+// =======================================
+
+// === position ===
+@mixin flex($direction: row, $justify: null, $align: null, $gap: null) {
+  display: flex;
+
+  @if $direction != row {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+// ---------------------------------------
+
+@mixin grid(
+  $cols: null,
+  $rows: null,
+  $align: null,
+  $justify: null,
+  $gap: null
+) {
+  display: grid;
+
+  @if $cols {
+    grid-template-columns: $cols;
+  }
+  @if $rows {
+    grid-template-rows: $rows;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-items: $justify;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+// =======================================
+
+// === btns ===
+@mixin btn(
+  $display: inline-flex,
+  $width: 185px,
+  $height: 45px,
+  $padding: 11px 25px,
+  $bord: 1px solid $base-black,
+  $gap: null
+) {
+  @include flex(row, center, center, 15px);
+  @include btn-font;
+  display: $display;
+  width: $width;
+  height: $height;
+  padding: $padding;
+  border: $bord;
+  @if $gap {
+    gap: $gap;
+  }
+}
+// ---------------------------------------
+// =======================================
+
+// === section-title ===
+@mixin section-title {
+  @include flex(column, center, flex-start, 25px);
+}
