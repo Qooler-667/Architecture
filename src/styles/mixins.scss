@@ -106,6 +106,25 @@
   font-weight: $weight;
   letter-spacing: $l-spacing;
 }
+// ---------------------------------------
+
+@mixin burger-link(
+  $color: $light-grey,
+  $size: $burger-link,
+  $font: $f-main,
+  $f-weight: $w-semiBold,
+  $l-spacing: $l-spacing02
+) {
+  color: $color;
+  font-size: $size;
+  font-family: $font;
+  font-weight: $f-weight;
+  letter-spacing: $l-spacing;
+  transition: color 0.3s;
+  &:hover {
+    color: $base-white;
+  }
+}
 // =======================================
 
 // === position ===

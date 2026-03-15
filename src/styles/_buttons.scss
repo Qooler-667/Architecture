@@ -1,0 +1,26 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.exit-btn {
+  @include flex($justify: center, $align: center);
+  width: 24px;
+  height: 24px;
+  box-shadow: 0 0 2px $base-white;
+  background: $text-color;
+
+  .exit-line {
+    display: block;
+    width: 20px;
+    height: 3px;
+    transform: rotate(45deg);
+    background: $exit-color;
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 3px;
+      transform: rotate(90deg);
+      background: $exit-color;
+    }
+  }
+}

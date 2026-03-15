@@ -7,6 +7,7 @@ $size-h1: clamp(32px, 5vw, 52px);
 $size-h2: clamp(24px, 5vw, 40px);
 $size-h3: clamp(24px, 5vw, 32px);
 $size-text: clamp(14px, 5vw, 18px);
+$burger-link: 20px;
 
 // ------------------------------
 // === font-weight ===
@@ -25,7 +26,9 @@ $l-height129: 129%;
 // === colors ===
 $base-black: rgb(0, 0, 0);
 $base-white: rgb(255, 255, 255);
+$light-grey: rgba(255, 255, 255, 0.7);
 $text-color: rgb(61, 61, 61);
+$exit-color: #ff5100;
 // ------------------------------
 // === latter-spacing ===
 $l-spacing02: 0.02em;

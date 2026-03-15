@@ -15,3 +15,14 @@ a {
   color: inherit;
   display: inline-block;
 }
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+a,
+button {
+  cursor: pointer;
+}
