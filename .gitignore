@@ -4,6 +4,7 @@ node_modules/
 .pnp.js
  
 # Кэш и временные файлы
+*.map
 .cache/
 .npm/
 .tmp/

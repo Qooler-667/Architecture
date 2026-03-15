@@ -8,10 +8,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/service-img3.webp);
+  background-image: url(../images/project-img.webp);
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 999;
   display: none;
   &-active {
     display: flex;
@@ -43,7 +44,7 @@
   }
 
   &__item-link {
-    @include burger-link;
+    @include link;
     padding: 5px 15px;
     border-radius: 15px;
     background: rgba(255, 255, 255, 0.3);

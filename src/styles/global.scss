@@ -16,3 +16,11 @@ h2 {
 .section-title {
   @include section-title;
 }
+
+.container {
+  @include flex(row, space-between, center);
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}

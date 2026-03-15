@@ -55,3 +55,37 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider();
   });
 });
+
+// === burger - open ===
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.header__burger-btn');
+  const burgerMenu = document.querySelector('.burger');
+  const exitBtn = document.querySelector('.burger__exit-btn');
+  const navLinks = document.querySelectorAll('.burger__item-link');
+
+  const closeMenu = () => {
+    burgerMenu.classList.remove('burger-active');
+    document.body.style.overflow = '';
+  };
+
+  // Открытие
+  burgerBtn?.addEventListener('click', () => {
+    burgerMenu.classList.add('burger-active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Закрытие по крестику
+  exitBtn?.addEventListener('click', closeMenu);
+
+  // Закрытие по ссылкам
+  navLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Закрытие по клику вне меню (по фону .burger)
+  burgerMenu?.addEventListener('click', (e) => {
+    if (e.target === burgerMenu) {
+      closeMenu();
+    }
+  });
+});
