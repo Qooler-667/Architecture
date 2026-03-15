@@ -1,6 +1,7 @@
 @use 'vars' as *;
 @use 'mixins' as *;
 
+// === exit-btn ===
 .exit-btn {
   @include flex($justify: center, $align: center);
   width: 24px;
@@ -22,5 +23,23 @@
       transform: rotate(90deg);
       background: $exit-color;
     }
+  }
+}
+
+.slider__btn {
+  @include flex($justify: center, $align: center);
+  width: 24px;
+  height: 24px;
+
+  svg {
+    display: block;
+    width: 12px;
+    height: 12px;
+    --stroke-1: #{$base-white};
+    transition: transform 0.2s;
+  }
+
+  &:hover svg {
+    transform: scale(1.4);
   }
 }
