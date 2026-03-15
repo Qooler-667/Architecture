@@ -13,6 +13,7 @@
     height: 100%;
     overflow: hidden;
   }
+
   &__track {
     display: flex;
     height: 100%;
@@ -20,10 +21,12 @@
     user-select: none;
     cursor: grab;
     transition: transform 0.5s ease;
+
     &:active {
       cursor: grabbing;
     }
   }
+
   &__item {
     flex: 0 0 100%;
     img {
@@ -31,6 +34,7 @@
       object-fit: cover;
     }
   }
+
   &__btns {
     @include flex($justify: space-evenly, $align: center);
     position: absolute;
