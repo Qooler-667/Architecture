@@ -1,0 +1,70 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.trust {
+  &__container {
+    @include flex($justify: center, $align: center, $gap: 95px);
+  }
+
+  &__banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100%;
+      z-index: 2;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, $base-white, transparent);
+    }
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, $base-white, transparent);
+    }
+    &-track {
+      @include flex(center, center, 60px);
+      width: max-content;
+      animation: scroll-loop 25s linear infinite;
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+    &-item {
+      flex-shrink: 0;
+      width: 150px;
+      height: 60px;
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: 0.3s;
+
+      &:hover {
+        filter: grayscale(0);
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+  @keyframes scroll-loop {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 3));
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__container {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}

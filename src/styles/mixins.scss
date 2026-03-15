@@ -47,6 +47,14 @@
   }
 }
 
+@mixin h4-style {
+  @include h-style($size: $size-h4, $l-height: $l-height133) {
+    @media (max-width: 768px) {
+      line-height: $l-height120;
+    }
+  }
+}
+
 @mixin subtitle(
   $color: $base-black,
   $font: $f-main,
