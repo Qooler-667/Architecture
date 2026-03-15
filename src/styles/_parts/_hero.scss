@@ -1,0 +1,71 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.hero {
+  @include grid($cols: 1fr repeat(2, minmax(300px, 620px)) 1fr, $gap: 20px);
+
+  &__desc {
+    grid-column: 2/3;
+    @include section-title;
+    @include flex(column, center, flex-start, 50px) {
+      @media (max-width: 768px) {
+        gap: 20px;
+      }
+    }
+  }
+
+  &__text {
+    @include text-style;
+    max-width: 495px;
+  }
+
+  &__slider {
+    grid-column: 3/5;
+    .slider {
+      max-width: 750px;
+    }
+  }
+
+  &__btn {
+    @include btn(
+      $width: 220px,
+      $bg: $base-black,
+      $hover-bg: $base-white,
+      $hover-color: $base-black,
+      $icon-w: 14px,
+      $icon-h: 14px
+    ) {
+      @include btn-font($color: $base-white);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    padding-inline: 20px;
+    justify-items: center;
+    gap: 50px;
+
+    &__desc {
+      grid-column: auto;
+      text-align: center;
+      align-items: center;
+    }
+
+    &__text {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    &__slider {
+      grid-column: auto;
+      margin-inline: -20px;
+      .slider {
+        max-width: 100%;
+      }
+    }
+
+    &__btn {
+      margin-inline: auto;
+    }
+  }
+}

@@ -148,6 +148,7 @@
   @if $gap {
     gap: $gap;
   }
+  @content;
 }
 // ---------------------------------------
 
@@ -185,9 +186,13 @@
   $height: 45px,
   $padding: 11px 25px,
   $bord: 1px solid $base-black,
-  $gap: null,
+  $bg: $base-white,
+  $hover-bg: $base-black,
+  $hover-color: $base-white,
+
   $icon-w: 12px,
-  $icon-h: 12px
+  $icon-h: 12px,
+  $gap: null
 ) {
   @include flex(row, center, center, 15px);
   @include btn-font;
@@ -197,6 +202,7 @@
   height: $height;
   padding: $padding;
   border: $bord;
+  background: $bg;
   white-space: nowrap;
   transition: all 0.3s;
   svg {
@@ -208,9 +214,10 @@
   }
 
   &:hover {
-    color: $base-white;
-    background: $base-black;
+    color: $hover-color;
+    background: $hover-bg;
   }
+  @content;
 }
 // ---------------------------------------
 
@@ -218,7 +225,11 @@
 
 // === section-title ===
 @mixin section-title {
-  @include flex(column, center, flex-start, 25px);
+  @include flex(column, center, flex-start, 35px) {
+    @media (max-width: 768px) {
+      gap: 15px;
+    }
+  }
 }
 // =======================================
 

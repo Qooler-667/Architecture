@@ -2,6 +2,8 @@
 @use 'mixins' as *;
 
 .header {
+  margin-bottom: 40px;
+
   &__container {
     padding-block: 27px;
   }
@@ -56,11 +58,18 @@
     display: none;
   }
 
+  @media (max-width: 1024px) {
+    margin-bottom: 10px;
+  }
+
   @media (max-width: 768px) {
+    margin-bottom: 0;
+
     &__nav,
     &__btn {
       display: none;
     }
+
     &__burger-btn {
       display: flex;
     }

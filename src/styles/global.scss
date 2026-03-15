@@ -1,12 +1,23 @@
 @use 'vars' as *;
 @use 'mixins' as *;
 
+body {
+  background: $base-white;
+}
+
 h1 {
   @include h1-style;
 }
 
 h2 {
   @include h2-style;
+}
+
+section {
+  margin-bottom: 90px;
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+  }
 }
 
 .subtitle {
