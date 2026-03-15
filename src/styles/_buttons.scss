@@ -1,6 +1,44 @@
 @use 'vars' as *;
 @use 'mixins' as *;
 
+// === burger-btn ===
+.burger-btn {
+  @include flex(row, center, flex-start);
+  padding: 8px 5px;
+  width: 36px;
+  height: 36px;
+
+  &:hover .burger-line::before,
+  &:hover .burger-line:after {
+    width: 100%;
+  }
+  .burger-line {
+    display: block;
+    width: 27px;
+    height: 3px;
+    background: $base-black;
+    position: relative;
+    &::before,
+    &::after {
+      position: absolute;
+      right: 0;
+      content: '';
+      display: block;
+      height: 3px;
+      background: $base-black;
+      transition: 0.3s;
+    }
+    &::before {
+      width: 21px;
+      top: 8px;
+    }
+    &::after {
+      width: 15px;
+      top: 16px;
+    }
+  }
+}
+
 // === exit-btn ===
 .exit-btn {
   @include flex($justify: center, $align: center);
@@ -26,20 +64,24 @@
   }
 }
 
+// === slider-btn ===
 .slider__btn {
   @include flex($justify: center, $align: center);
   width: 24px;
   height: 24px;
 
   svg {
-    display: block;
-    width: 12px;
-    height: 12px;
-    --stroke-1: #{$base-white};
+    @include icon($color1: $base-white, $width: 12px, $height: 12px);
     transition: transform 0.2s;
   }
 
   &:hover svg {
     transform: scale(1.4);
   }
+}
+
+// === btn ===
+
+.btn {
+  @include btn;
 }

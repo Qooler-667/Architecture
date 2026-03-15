@@ -108,12 +108,13 @@
 }
 // ---------------------------------------
 
-@mixin burger-link(
+@mixin link(
   $color: $light-grey,
   $size: $burger-link,
   $font: $f-main,
   $f-weight: $w-semiBold,
-  $l-spacing: $l-spacing02
+  $l-spacing: $l-spacing02,
+  $hover-color: $base-white
 ) {
   color: $color;
   font-size: $size;
@@ -121,9 +122,13 @@
   font-weight: $f-weight;
   letter-spacing: $l-spacing;
   transition: color 0.3s;
-  &:hover {
-    color: $base-white;
+  @if $hover-color {
+    &:hover {
+      color: $hover-color;
+    }
   }
+
+  @content;
 }
 // =======================================
 
@@ -180,23 +185,67 @@
   $height: 45px,
   $padding: 11px 25px,
   $bord: 1px solid $base-black,
-  $gap: null
+  $gap: null,
+  $icon-w: 12px,
+  $icon-h: 12px
 ) {
   @include flex(row, center, center, 15px);
   @include btn-font;
+
   display: $display;
   width: $width;
   height: $height;
   padding: $padding;
   border: $bord;
+  white-space: nowrap;
+  transition: all 0.3s;
+  svg {
+    @include icon($color1: currentColor, $width: $icon-w, $height: $icon-h);
+  }
+
   @if $gap {
     gap: $gap;
   }
+
+  &:hover {
+    color: $base-white;
+    background: $base-black;
+  }
 }
 // ---------------------------------------
+
 // =======================================
 
 // === section-title ===
 @mixin section-title {
   @include flex(column, center, flex-start, 25px);
+}
+// =======================================
+
+// === icon ===
+@mixin icon($color1: null, $color2: null, $width: null, $height: null) {
+  display: block;
+
+  @if $color1 {
+    --color-1: #{$color1};
+  }
+
+  @if $color2 {
+    --color-2: #{$color2};
+  }
+
+  @if $color1 {
+    --stroke-1: #{$color1};
+  }
+
+  @if $color2 {
+    --stroke-2: #{$color2};
+  }
+
+  @if $width {
+    width: $width;
+  }
+  @if $height {
+    height: $height;
+  }
 }
