@@ -1,0 +1,43 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.service {
+  &__container {
+    @include flex(column, center, flex-start, 35px);
+    @media (max-width: 1024px) {
+      align-items: center;
+    }
+  }
+
+  &__subtitle {
+    @include subtitle($pseudo: after);
+  }
+
+  &__visual {
+    @include flex(row, space-evenly, center, 25px 5px);
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      position: relative;
+    }
+  }
+  &__item-link {
+    @include link(
+      $color: $base-white,
+      $size: $service-link,
+      $f-weight: $w-bold
+    );
+    position: absolute;
+    left: 25px;
+    bottom: 25px;
+    transition: 0.3s;
+
+    @media (max-width: 768px) {
+      left: 20px;
+    }
+  }
+}
