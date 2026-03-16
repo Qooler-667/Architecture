@@ -4,11 +4,13 @@ $f-second: 'Inconsolata';
 // ------------------------------
 // === font-size ===
 $size-h1: clamp(32px, 5vw, 52px);
-$size-h2: clamp(24px, 5vw, 40px);
+$size-h2: clamp(24px, 3.2vw, 40px);
 $size-h3: clamp(24px, 5vw, 32px);
 $size-h4: 20px;
-$size-text: clamp(14px, 5vw, 18px);
+$size-text: clamp(14px, 3vw, 18px);
+$size-text16: clamp(14px, 3vw, 16px);
 $burger-link: 20px;
+$banner-num: clamp(24px, 2.85vw, 36px);
 
 // ------------------------------
 // === font-weight ===
@@ -29,8 +31,10 @@ $l-height120: 120%;
 $base-black: rgb(0, 0, 0);
 $base-white: rgb(255, 255, 255);
 $light-grey: rgba(255, 255, 255, 0.7);
+$banner-bg: rgb(242, 242, 242);
 $text-color: rgb(61, 61, 61);
 $exit-color: #ff5100;
+
 // ------------------------------
 // === latter-spacing ===
 $l-spacing02: 0.02em;

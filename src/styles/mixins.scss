@@ -88,12 +88,14 @@
   $font: $f-second,
   $weight: $w-semiBold,
   $size: $size-text,
+  $l-spacing: $l-spacing02,
   $l-height: $l-height133
 ) {
   color: $color;
   font-family: $font;
   font-weight: $weight;
   font-size: $size;
+  letter-spacing: $l-spacing;
   line-height: $l-height;
   @media (max-width: 768px) {
     line-height: $l-height129;
@@ -185,8 +187,25 @@
     gap: $gap;
   }
 }
-// =======================================
 
+// ---------------------------------------
+
+@mixin absolut($top: null, $bottom: null, $left: null, $right: null) {
+  position: absolute;
+  @if $top != null {
+    top: $top;
+  }
+  @if $bottom != null {
+    bottom: $bottom;
+  }
+  @if $left != null {
+    left: $left;
+  }
+  @if $right != null {
+    right: $right;
+  }
+}
+// =======================================
 // === btns ===
 @mixin btn(
   $display: inline-flex,
@@ -233,7 +252,7 @@
 
 // === section-title ===
 @mixin section-title {
-  @include flex(column, center, flex-start, 35px) {
+  @include flex(column, center, flex-start, clamp(20px, 2.75vw, 35px)) {
     @media (max-width: 768px) {
       gap: 15px;
     }

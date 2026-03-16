@@ -1,0 +1,88 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.hello {
+  @include grid($cols: 1fr minmax(0, 620px) minmax(0, 620px) 1fr, $gap: 20px);
+
+  &__visual {
+    grid-column: 2 / 3;
+    padding-bottom: 35px;
+    position: relative;
+
+    &-imgs {
+      @include flex($gap: clamp(10px, 1.96vw, 25px));
+      width: 100%;
+      img {
+        min-width: 0;
+      }
+    }
+
+    &-banner {
+      @include absolut($bottom: 0, $right: 0);
+      @include flex(row, space-evenly, center);
+      width: 70%;
+      max-width: 430px;
+      min-width: 220px;
+      height: 30%;
+      max-height: 120px;
+      min-height: 70px;
+      background: $banner-bg;
+    }
+  }
+
+  &__banner-text {
+    @include flex(column, center, center);
+    @include text-style;
+    span {
+      @include text-style(
+        $color: $base-black,
+        $font: $f-main,
+        $weight: $w-bold,
+        $size: $banner-num,
+        $l-spacing: $l-spacing02,
+        $l-height: 100%
+      );
+    }
+  }
+
+  &__banner-line {
+    width: 2px;
+    height: 60px;
+    background: $text-color;
+  }
+
+  &__desc {
+    @include flex(column, center, center, clamp(20px, 2.74vw, 35px));
+    padding-left: 20px;
+    @media (min-width: 1280px) {
+      padding-left: 50px;
+    }
+
+    &-text {
+      @include text-style($size: $size-text16);
+    }
+  }
+  @media (max-width: 1024px) {
+    @include grid($cols: 1fr, $align: center, $justify: center, $gap: 40px);
+    padding-inline: 20px;
+    &__visual {
+      grid-column: 1;
+      &-banner {
+        right: -20px;
+        min-width: 240px;
+      }
+    }
+
+    &__desc {
+      padding-left: 0;
+      &-text {
+        width: 80%;
+        text-align: center;
+        @media (max-width: 768px) {
+          width: 100%;
+          text-align: start;
+        }
+      }
+    }
+  }
+}
