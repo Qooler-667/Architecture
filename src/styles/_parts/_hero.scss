@@ -21,6 +21,7 @@
 
   &__slider {
     grid-column: 3/5;
+
     .slider {
       max-width: 750px;
     }
@@ -59,6 +60,8 @@
     &__slider {
       grid-column: auto;
       margin-inline: -20px;
+      width: calc(100% + 40px);
+
       .slider {
         max-width: 100%;
       }

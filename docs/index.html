@@ -72,38 +72,34 @@
       </svg>
     </button>
   </article>
-  <article class="hero__slider"><div class="slider">
+  <article class="hero__slider">
+    <div class="slider" data-images="../images/hero-img.webp,../images/hero-img.webp">
   <div class="slider__wrapper">
-    <div class="slider__track">
-      <div class="slider__item">
-        <img src="../images/hero-img.webp" alt="" />
-      </div>
-      <div class="slider__item">
-        <img src="../images/project-img.webp" alt="" />
-      </div>
+    <div class="slider__track"></div>
+
+    <div class="slider__btns">
+      <button class="slider__btn prev-btn">
+        <svg>
+          <use href="../images/icons/stack.svg#shevron-left"></use>
+        </svg>
+      </button>
+      <button class="slider__btn next-btn">
+        <svg>
+          <use href="../images/icons/stack.svg#shevron-right"></use>
+        </svg>
+      </button>
     </div>
   </div>
-  <div class="slider__btns">
-    <button class="slider__btn prev-btn">
-      <svg>
-        <use href="../images/icons/stack.svg#shevron-left"></use>
-      </svg>
-    </button>
-    <button class="slider__btn next-btn">
-      <svg>
-        <use href="../images/icons/stack.svg#shevron-right"></use>
-      </svg>
-    </button>
-  </div>
 </div>
-</article>
+
+  </article>
 </section>
 
     <!-- ------------------------- -->
     <section class="trust">
   <div class="container trust__container">
     <div class="trust__desc">
-      <h4 class="trust__text">Trusted by 75+ Partners</h4>
+      <h4 class="trust__title">Trusted by 75+ Partners</h4>
     </div>
     <div class="trust__banner">
       <div class="trust__banner-track">
@@ -192,6 +188,61 @@
         <a class="service__item-link" href="#">Furniture Design</a>
       </div>
     </div>
+  </div>
+</section>
+
+    <!-- ------------------------- -->
+    <section class="project">
+  <div class="container project__container">
+    <div class="project__title section-title">
+      <div class="project__subtitle">Our Project</div>
+      <h2>Our latest projects</h2>
+    </div>
+    <article class="project__slider">
+      <div class="slider" data-images="../images/project-img1.webp,../images/project-img1.webp,../images/project-img1.webp">
+  <div class="slider__wrapper">
+    <div class="slider__track"></div>
+
+    <div class="slider__btns">
+      <button class="slider__btn prev-btn">
+        <svg>
+          <use href="../images/icons/stack.svg#shevron-left"></use>
+        </svg>
+      </button>
+      <button class="slider__btn next-btn">
+        <svg>
+          <use href="../images/icons/stack.svg#shevron-right"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+      <div class="project__slider-content">
+        <div class="project__slide-desc active">
+          <h4 class="project__slide-title">Hanani Home</h4>
+          <p class="project__slide-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing
+            dui tellus commodo convallis. Auctor eget orci pharetra non.
+          </p>
+        </div>
+        <div class="project__slide-desc">
+          <h4 class="project__slide-title">Modern Kitchen</h4>
+          <p class="project__slide-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing
+            dui tellus commodo convallis. Auctor eget orci pharetra non.
+          </p>
+        </div>
+        <div class="project__slide-desc">
+          <h4 class="project__slide-title">Cozy Living</h4>
+          <p class="project__slide-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing
+            dui tellus commodo convallis. Auctor eget orci pharetra non.
+          </p>
+        </div>
+      </div>
+    </article>
   </div>
 </section>
 

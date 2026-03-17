@@ -1,4 +1,6 @@
+@use 'sass:list';
 @use 'vars' as *;
+
 // fonts
 @mixin font-face($name, $path, $weight: 400) {
   @font-face {
@@ -47,12 +49,17 @@
   }
 }
 
-@mixin h4-style {
-  @include h-style($size: $size-h4, $l-height: $l-height133) {
+@mixin h4-style($color: $base-black) {
+  @include h-style(
+    $size: $size-h4,
+    $l-height: $l-height133,
+    $f-weight: $w-semiBold
+  ) {
     @media (max-width: 768px) {
       line-height: $l-height120;
     }
   }
+  color: $color;
 }
 
 @mixin subtitle(
@@ -207,6 +214,7 @@
   }
 }
 // =======================================
+
 // === btns ===
 @mixin btn(
   $display: inline-flex,
@@ -253,8 +261,13 @@
 
 // === section-title ===
 @mixin section-title {
+  width: 100%;
   @include flex(column, center, flex-start, clamp(20px, 2.75vw, 35px)) {
+    @media (max-width: 1024px) {
+      max-width: 85%;
+    }
     @media (max-width: 768px) {
+      max-width: 100%;
       gap: 15px;
     }
   }
@@ -288,3 +301,4 @@
     height: $height;
   }
 }
+// =======================================

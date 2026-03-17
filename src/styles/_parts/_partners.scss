@@ -6,6 +6,10 @@
     @include flex($justify: center, $align: center, $gap: 95px);
   }
 
+  &__title {
+    font-weight: $w-bold;
+  }
+
   &__banner {
     width: 100%;
     overflow: hidden;
