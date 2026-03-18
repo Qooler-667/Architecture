@@ -1,0 +1,130 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.review {
+  &__container {
+    @include flex(column, center, center, 35px);
+    position: relative;
+  }
+
+  &__slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    .review__slider-btns {
+      display: none;
+    }
+
+    &-track {
+      @include flex(row, space-between, center, 30px 20px);
+    }
+
+    &-item {
+      width: 100%;
+      max-width: 380px;
+      min-width: 310px;
+      height: 380px;
+      background: $banner-bg;
+    }
+  }
+
+  &__item-card {
+    @include flex(column, flex-start, flex-start, 45px);
+    height: 100%;
+    padding: 40px;
+  }
+
+  &__card-author {
+    @include flex(row, center, center, 15px);
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+
+  &__author {
+    @include flex(column, center, flex-start, 5px);
+
+    &-name {
+      @include text-style(
+        $base-black,
+        $f-main,
+        $w-bold,
+        $size-text16,
+        $l-height: normal
+      );
+    }
+
+    &-company {
+      @include text-style(
+        $text-color,
+        $f-main,
+        $w-semiBold,
+        $size: 14px,
+        $l-spacing: $l-spacing02,
+        $l-height: normal
+      );
+    }
+  }
+
+  &__card-text {
+    @include text-style(
+      $text-color,
+      $f-second,
+      $w-medium,
+      $size-text16,
+      $l-spacing: 0%,
+      $l-height: $l-height125
+    ) {
+      @media (max-width: 375px) {
+        $l-height: $l-height129;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__slider-track {
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    &__slider-item {
+      min-width: 100%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    &__slider-track {
+      flex-wrap: nowrap;
+
+      height: 380px;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    &__slider-item {
+      max-width: 100%;
+      height: 300px;
+    }
+
+    .review__slider-btns {
+      display: flex;
+      left: 50%;
+      transform: translate(-50%);
+      box-shadow: 0 0 3px rgb(0, 0, 0, 0.2);
+    }
+
+    .slider__btn {
+      svg {
+        @include icon($color1: $base-black);
+      }
+    }
+
+    &__item-card {
+      padding: 25px 20px;
+      gap: 20px;
+    }
+  }
+}

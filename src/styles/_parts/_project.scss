@@ -6,10 +6,6 @@
     @include flex(column, center, center, 35px);
   }
 
-  &__subtitle {
-    @include subtitle($pseudo: after);
-  }
-
   &__slider {
     width: 100%;
     height: 540px;

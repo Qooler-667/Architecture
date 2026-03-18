@@ -9,10 +9,6 @@
     }
   }
 
-  &__subtitle {
-    @include subtitle($pseudo: after);
-  }
-
   &__visual {
     @include flex(row, space-evenly, center, 25px 5px);
     width: 100%;

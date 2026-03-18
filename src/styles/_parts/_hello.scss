@@ -62,6 +62,11 @@
       @include text-style($size: $size-text16);
     }
   }
+
+  &__subtitle {
+    @include subtitle($pseudo: before);
+  }
+
   @media (max-width: 1024px) {
     @include grid($cols: 1fr, $align: center, $justify: center, $gap: 40px);
     padding-inline: 20px;

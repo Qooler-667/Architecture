@@ -37,14 +37,8 @@
   }
 
   &__btns {
-    @include flex($justify: space-evenly, $align: center);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 95px;
-    height: 36px;
-    background: rgba(217, 217, 217, 0.2);
-    backdrop-filter: blur(10px);
+    @include absolut($bottom: 0, $right: 0);
+    @include slider-btns;
   }
 
   @media (max-width: 425px) {
