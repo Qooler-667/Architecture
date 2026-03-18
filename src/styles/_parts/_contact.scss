@@ -1,0 +1,57 @@
+@use 'vars' as *;
+@use 'mixins' as *;
+
+.contact {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  background-image: url(../images/contact-bg.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right top -115px;
+
+  &__container {
+    @include flex(column, center, flex-start, 25px);
+    padding-block: 80px;
+  }
+
+  &__title {
+    width: clamp(280px, 50vw, 485px);
+  }
+
+  &__title-text {
+    @include text-style($size: $size-text16);
+  }
+
+  &-btn {
+    @include btn(
+      $bg: $base-black,
+      $hover-bg: $base-white,
+      $hover-color: $base-black,
+      $bord: 1px solid $base-black
+    ) {
+      color: $base-white;
+
+      &:hover {
+        border-color: $base-black;
+        background: transparent;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    background-position: right top;
+  }
+
+  @media (max-width: 768px) {
+    background-image: url(../images/contact-bg2.webp);
+
+    background-position: right bottom;
+  }
+
+  @media (max-width: 425px) {
+    &-btn {
+      width: 160px;
+    }
+  }
+}
