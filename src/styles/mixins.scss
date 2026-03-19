@@ -51,6 +51,15 @@
   @content;
 }
 
+@mixin h3-style($color: $base-black) {
+  @include h-style($size: $size-h3, $l-height: $l-height131) {
+    @media (max-width: 768px) {
+      line-height: $l-height133;
+    }
+  }
+  @content;
+}
+
 @mixin h4-style($color: $base-black) {
   @include h-style(
     $size: $size-h4,

@@ -13,7 +13,11 @@ h2 {
   @include h2-style;
 }
 
-h4{
+h3 {
+  @include h3-style;
+}
+
+h4 {
   @include h4-style;
 }
 
