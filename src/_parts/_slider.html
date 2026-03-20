@@ -1,6 +1,12 @@
-<div class="slider" data-images="@@images">
+<div
+  class="slider"
+  data-images="@@images"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="@@slider_label"
+>
   <div class="slider__wrapper">
-    <div class="slider__track"></div>
+    <div class="slider__track" aria-live="polite"></div>
 
     <!-- <div class="slider__btns">
       <button class="slider__btn prev-btn">

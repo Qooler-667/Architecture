@@ -19,14 +19,14 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    <div class="header">
+    <header class="header">
   <div class="container header__container">
-    <a href="#" class="header__logo">
+    <a href="#" class="header__logo" aria-label="Architecture - на главную">
       <svg>
         <use href="../images/icons/stack.svg#Logo"></use>
       </svg>
     </a>
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Основное меню">
       <ul class="header__nav-list">
         <li class="header__list-item">
           <a href="#" class="header__item-link">HOME</a>
@@ -48,14 +48,19 @@
         <use href="../images/icons/stack.svg#shevron-top"></use>
       </svg>
     </button>
-    <button class="header__burger-btn burger-btn">
+    <button
+      class="header__burger-btn burger-btn"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
       <span class="burger-line"></span>
     </button>
   </div>
-</div>
+</header>
 
     <!-- ------------------------- -->
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
   <article class="hero__desc">
     <div class="hero__title section-title">
       <h1>Create a modern and unique design your dream</h1>
@@ -67,15 +72,21 @@
     </div>
     <button class="hero__btn btn">
       VIEW A PROJECT
-      <svg>
+      <svg aria-hidden="true">
         <use href="../images/icons/stack.svg#arrow-left"></use>
       </svg>
     </button>
   </article>
   <article class="hero__slider">
-    <div class="slider" data-images="../images/hero-img.webp,../images/hero-img.webp">
+    <div
+  class="slider"
+  data-images="../images/hero-img.webp,../images/hero-img.webp"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="@@slider_label"
+>
   <div class="slider__wrapper">
-    <div class="slider__track"></div>
+    <div class="slider__track" aria-live="polite"></div>
 
     <!-- <div class="slider__btns">
       <button class="slider__btn prev-btn">
@@ -91,12 +102,12 @@
     </div> -->
     <div class="slider__btns slider__btns">
   <button class="slider__btn prev-btn" aria-label="Previous slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-left"></use>
     </svg>
   </button>
   <button class="slider__btn next-btn" aria-label="Next slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-right"></use>
     </svg>
   </button>
@@ -152,10 +163,14 @@
     <section class="hello">
   <article class="hello__visual">
     <div class="hello__visual-imgs">
-      <img class="hello__img" src="../images/hello-img1.png" alt="" />
-      <img class="hello__imgs-img" src="../images/hello-img2.png" alt="" />
+      <img class="hello__img" src="../images/hello-img1.png" alt="image" />
+      <img class="hello__imgs-img" src="../images/hello-img2.png" alt="image" />
     </div>
-    <div class="hello__visual-banner">
+    <div
+      class="hello__visual-banner"
+      role="group"
+      aria-label="Статистика компании"
+    >
       <p class="hello__banner-text"><span>10</span>Years</p>
       <hr class="hello__banner-line" />
       <p class="hello__banner-text"><span>200+</span>Projects</p>
@@ -212,9 +227,15 @@
       <h2>Our latest projects</h2>
     </div>
     <article class="project__slider">
-      <div class="slider" data-images="../images/project-img1.webp,../images/project-img1.webp,../images/project-img1.webp">
+      <div
+  class="slider"
+  data-images="../images/project-img1.webp,../images/project-img1.webp,../images/project-img1.webp"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="@@slider_label"
+>
   <div class="slider__wrapper">
-    <div class="slider__track"></div>
+    <div class="slider__track" aria-live="polite"></div>
 
     <!-- <div class="slider__btns">
       <button class="slider__btn prev-btn">
@@ -230,12 +251,12 @@
     </div> -->
     <div class="slider__btns slider__btns">
   <button class="slider__btn prev-btn" aria-label="Previous slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-left"></use>
     </svg>
   </button>
   <button class="slider__btn next-btn" aria-label="Next slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-right"></use>
     </svg>
   </button>
@@ -332,15 +353,13 @@
               itemtype="https://schema.org/Person"
             >
               <img
-                src="../images/review-author1.webp"
-                alt="Menta Nia"
+                src="../images/review-author2.webp"
+                alt="Sannad"
                 itemprop="image"
               />
 
               <div class="review__author">
-                <span class="review__author-name" itemprop="name"
-                  >Menta Nia</span
-                >
+                <span class="review__author-name" itemprop="name">Sannad</span>
                 <span class="review__author-company">Company Name</span>
               </div>
             </div>
@@ -368,15 +387,13 @@
               itemtype="https://schema.org/Person"
             >
               <img
-                src="../images/review-author1.webp"
-                alt="Menta Nia"
+                src="../images/review-author3.webp"
+                alt="George"
                 itemprop="image"
               />
 
               <div class="review__author">
-                <span class="review__author-name" itemprop="name"
-                  >Menta Nia</span
-                >
+                <span class="review__author-name" itemprop="name">George</span>
                 <span class="review__author-company">Company Name</span>
               </div>
             </div>
@@ -393,12 +410,12 @@
       </div>
       <div class="slider__btns review__slider-btns">
   <button class="slider__btn prev-btn" aria-label="Previous slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-left"></use>
     </svg>
   </button>
   <button class="slider__btn next-btn" aria-label="Next slide">
-    <svg>
+    <svg aria-hidden="true">
       <use href="../images/icons/stack.svg#shevron-right"></use>
     </svg>
   </button>
@@ -481,11 +498,17 @@
 </section>
 
     <!-- ------------------------- -->
-    <div class="burger">
+    <div
+  id="mobile-menu"
+  class="burger"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Мобильная навигация"
+>
   <div class="burger__menu">
     <ul class="burger__list">
       <li class="burger__exit">
-        <button class="burger__exit-btn exit-btn">
+        <button class="burger__exit-btn exit-btn" aria-label="Закрыть меню">
           <span class="burger__exit-line exit-line"></span>
         </button>
       </li>
@@ -504,6 +527,115 @@
     </ul>
   </div>
 </div>
+
+    <!-- ------------------------- -->
+    <footer class="footer">
+  <div class="footer__container container">
+    <article class="footer__desc">
+      <svg class="footer__desc-logo">
+        <use href="../images/icons/stack.svg#Logo"></use>
+      </svg>
+      <p class="footer__desc-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing dui
+        tellus commodo convallis. Auctor eget orci pharetra non. Integer lorem
+        in scelerisque tortor dui tempor, volutpat viverra faucibus.
+      </p>
+    </article>
+    <!-- ----------------------------------------------------- -->
+
+    <article class="footer__about footer__article">
+      <span class="footer__about-title article-title">About</span>
+      <ul class="footer__about-list footer-list">
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">About Us</a>
+        </li>
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">Services</a>
+        </li>
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">Portfolio</a>
+        </li>
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">Contact Us</a>
+        </li>
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">Blog</a>
+        </li>
+        <li class="footer__about-item">
+          <a href="#" class="footer__about-link footer-link">Sho</a>
+        </li>
+      </ul>
+    </article>
+    <!-- ----------------------------------------------------- -->
+
+    <article class="footer__office footer__article">
+      <span class="footer__office-title article-title">Office</span>
+      <ul class="footer__office-list footer-list">
+        <li class="footer__office-item">
+          <a href="#" class="footer__office-link footer-link"
+            >Scandinavian design</a
+          >
+        </li>
+        <li class="footer__office-item">
+          <a href="#" class="footer__office-link footer-link">Smart House</a>
+        </li>
+        <li class="footer__office-item">
+          <a href="#" class="footer__office-link footer-link">Modern Design</a>
+        </li>
+        <li class="footer__office-item">
+          <a href="#" class="footer__office-link footer-link"
+            >Minimalist Design</a
+          >
+        </li>
+      </ul>
+    </article>
+    <!-- ----------------------------------------------------- -->
+
+    <article class="footer__updates footer__article">
+      <span class="footer__updates-title article-title"
+        >Stay Tuned for updates</span
+      >
+      <div class="footer__updates-form">
+        <form action="get">
+          <input type="text" placeholder="Email" />
+          <button class="footer__btn form-btn" type="submit">
+            <svg>
+              <use href="../images/icons/stack.svg#arrow-left"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <ul class="footer__updates-list">
+        <li class="footer__updates-item">
+          <a href="#" class="footer__updates-link"
+            ><svg>
+              <use href="../images/icons/stack.svg#twitter"></use></svg
+          ></a>
+        </li>
+        <li class="footer__updates-item">
+          <a href="#" class="footer__updates-link"
+            ><svg>
+              <use href="../images/icons/stack.svg#youtube"></use></svg
+          ></a>
+        </li>
+        <li class="footer__updates-item">
+          <a href="#" class="footer__updates-link"
+            ><svg>
+              <use href="../images/icons/stack.svg#instagram"></use></svg
+          ></a>
+        </li>
+        <li class="footer__updates-item">
+          <a href="#" class="footer__updates-link"
+            ><svg>
+              <use href="../images/icons/stack.svg#facebook"></use></svg
+          ></a>
+        </li>
+      </ul>
+    </article>
+  </div>
+  <hr class="footer__line" />
+  <p class="footer__rights">Imah &copy; 2022. All Rights Reserved.</p>
+</footer>
 
     <!-- ------------------------- -->
 

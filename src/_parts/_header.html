@@ -1,11 +1,11 @@
-<div class="header">
+<header class="header">
   <div class="container header__container">
-    <a href="#" class="header__logo">
+    <a href="#" class="header__logo" aria-label="Architecture - на главную">
       <svg>
         <use href="../images/icons/stack.svg#Logo"></use>
       </svg>
     </a>
-    <nav class="header__nav">
+    <nav class="header__nav" aria-label="Основное меню">
       <ul class="header__nav-list">
         <li class="header__list-item">
           <a href="#" class="header__item-link">HOME</a>
@@ -27,8 +27,13 @@
         <use href="../images/icons/stack.svg#shevron-top"></use>
       </svg>
     </button>
-    <button class="header__burger-btn burger-btn">
+    <button
+      class="header__burger-btn burger-btn"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
       <span class="burger-line"></span>
     </button>
   </div>
-</div>
+</header>

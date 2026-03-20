@@ -12,6 +12,7 @@ $size-text16: clamp(14px, 3vw, 16px);
 $burger-link: 20px;
 $banner-num: clamp(24px, 2.85vw, 36px);
 $service-link: clamp(18px, 5vw, 24px);
+$article-title: clamp(16px, 5vw, 18px);
 
 // ------------------------------
 // === font-weight ===
@@ -20,6 +21,8 @@ $w-semiBold: 600;
 $w-medium: 500;
 // ------------------------------
 // === line-height ===
+$l-height157: 157%;
+$l-height144: 144%;
 $l-height142: 142%;
 $l-height135: 135%;
 $l-height133: 133%;
@@ -37,6 +40,7 @@ $light-grey: rgba(255, 255, 255, 0.7);
 $banner-bg: rgb(242, 242, 242);
 $text-color: rgb(61, 61, 61);
 $exit-color: #ff5100;
+$green: rgb(0, 255, 85);
 
 // ------------------------------
 // === latter-spacing ===

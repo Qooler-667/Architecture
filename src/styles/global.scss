@@ -21,6 +21,12 @@ h4 {
   @include h4-style;
 }
 
+.article-title {
+  @include article-title;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
 section {
   margin-bottom: 90px;
   @media (max-width: 768px) {
@@ -42,4 +48,8 @@ section {
   max-width: 1280px;
   margin-inline: auto;
   padding-inline: 20px;
+}
+
+.footer-list {
+  @include footer-list;
 }

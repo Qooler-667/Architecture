@@ -162,6 +162,34 @@
 
   @content;
 }
+
+// ---------------------------------------
+
+// === footer-article-title ===
+@mixin article-title {
+  @include text-style(
+    $font: $f-main,
+    $weight: $w-bold,
+    $size: $article-title,
+    $l-height: normal
+  );
+}
+
+// =======================================
+
+// === footer-list ===
+@mixin footer-list {
+  @include flex(column, center, flex-start, 10px);
+  @include text-style(
+    $weight: $w-bold,
+    $l-spacing: 0%,
+    $l-height: $l-height144
+  );
+  @media (max-width: 425px) {
+    $l-height: $l-height157;
+  }
+}
+
 // =======================================
 
 // === position ===
@@ -249,7 +277,6 @@
 ) {
   @include flex(row, center, center, 15px);
   @include btn-font;
-
   display: $display;
   width: $width;
   height: $height;
