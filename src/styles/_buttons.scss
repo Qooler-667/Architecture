@@ -95,42 +95,34 @@
   }
 }
 
-// .form-btn {
-//   @include btn(
-//     $width: 56px,
-//     $height: 32px,
-//     $padding: 0,
-//     $bord: none,
-//     $bg: $base-black,
-//     $hover-bg: $green,
-//     $hover-color: $base-white
-//   ) {
-//     svg {
-//       @include icon($color1: $base-white);
-//     }
-//   }
-//   &:hover svg {
-//     transform: translateX(5px) scale(1.3);
-//   }
-// }
-
 .form-btn {
   @include btn(
     $width: 56px,
     $height: 32px,
     $padding: 0,
     $bord: none,
-    $bg: $base-black,
-    $hover-bg: $green,
-    $hover-color: $base-white
+    $bg: $base-black
   ) {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+
     svg {
       @include icon($color1: $base-white);
       transition: transform 0.3s ease;
     }
-    &:hover {
+
+    &.is-active {
+      opacity: 1;
+      cursor: pointer;
+      background-color: $green;
+
       svg {
         animation: arrow-move 0.3s infinite alternate ease-in-out;
+      }
+
+      &:hover {
+        filter: brightness(1.1);
       }
     }
   }

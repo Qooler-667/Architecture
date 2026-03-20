@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-// -----------------------------------------
 
 // -------------------------------------------------------------
 class BaseSlider {
@@ -259,5 +258,25 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeTimeout = setTimeout(() => {
       allSliders.forEach((slider) => slider.updatePosition());
     }, 100);
+  });
+});
+
+// ------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const emailInput = document.querySelector('#email-input');
+  const submitBtn = document.querySelector('.form-btn');
+
+  function isValidEmail(email) {
+    return email.includes('@') && email.includes('.');
+  }
+
+  emailInput.addEventListener('input', () => {
+    if (isValidEmail(emailInput.value)) {
+      submitBtn.classList.add('is-active');
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.classList.remove('is-active');
+      submitBtn.disabled = true;
+    }
   });
 });
