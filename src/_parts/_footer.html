@@ -65,13 +65,21 @@
         >Stay Tuned for updates</span
       >
       <div class="footer__updates-form">
-        <form action="get">
-          <input type="text" placeholder="Email" />
-          <button class="footer__btn form-btn" type="submit">
+        <form action="get" id="main-form">
+          <input type="email" id="email-input" placeholder="Email" required />
+          <button
+            class="footer__btn form-btn"
+            type="submit"
+            id="submit-btn"
+            disabled
+          >
             <svg>
               <use href="images/icons/stack.svg#arrow-left"></use>
             </svg>
           </button>
+          <p id="error-message" style="color: red; display: none">
+            Введите корректный адрес
+          </p>
         </form>
       </div>
       <ul class="footer__updates-list">
